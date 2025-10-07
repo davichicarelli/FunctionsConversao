@@ -30,3 +30,30 @@ function converterMoeda($valor, $moeda) {
     return "R$ " . number_format($valor, 2, ',', '.') . " equivalem a " . 
            number_format($resultado, 6, ',', '.') . " " . $nomesMoedas[$moeda];
 }
+
+$valor = filter_input(INPUT_POST, 'valor', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+$valor = floatval(str_replace(',', '.', $valor));
+$moeda = filter_input(INPUT_POST, 'moeda', FILTER_VALIDATE_INT);
+$resultado = converterMoeda($valor, $moeda);
+    exibirMensagem("<h1>Conversão realizada com sucesso!</h1>");
+
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moedas</title>
+    <link rel="stylesheet" href="./../css/style.css">
+</head>
+<body>
+
+<h2>Valor em Real (BRL):</h2>
+<p>R$ <?= number_format($valor, 2, ',', '.'); ?></p>
+
+<h2>Resultado da Conversão:</h2>
+<?php echo $resultado; ?>
+
+<a href="./../index.html">Voltar</a>
+</body>
+</html>
