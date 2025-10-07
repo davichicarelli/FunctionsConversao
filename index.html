@@ -25,18 +25,18 @@
             <button type="submit">Converter</button>
         </form>
 <br><br>
-        <h1>Conversor de Real para Outras Moedas com o Consumo da API</h1>
+        <h1>Conversor de Real para Outras Moedas Sem o Uso de Functions</h1>
 
-        <form action="./source/conversaocomAPI.php" method="post">
+        <form action="./source/conversaoNoFunction.php" method="post">
             <h3>Valor em Real (BRL):</h3>
             <input type="number" id="valor2" name="valor" step="0.01" min="0.01" placeholder="Ex: 1,10,100,1000" required>
             
             <h3>Escolha a Moeda de Destino:</h3>
             <select id="moeda2" name="moeda" required>
                 <option value="">Selecione...</option>
-                <option value="USD">Dólar Americano (USD)</option>
-                <option value="EUR">Euro (EUR)</option>
-                <option value="BTC">Bitcoin (BTC)</option>
+                <option value="1">Dólar Americano (USD)</option>
+                <option value="2">Euro (EUR)</option>
+                <option value="3">Bitcoin (BTC)</option>
             </select>
 
             <button type="submit">Converter</button>
