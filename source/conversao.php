@@ -5,3 +5,6 @@ function validarValor($valor) {
 function validarMoeda($moeda) {
     return is_numeric($moeda) && in_array($moeda, [1, 2, 3]);
 }
+function exibirMensagem($mensagem) {
+    echo $mensagem;
+}
